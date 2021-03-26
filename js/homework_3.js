@@ -16,18 +16,16 @@ P.S. Функции вызывать не обязательно */
 let numberOfFilms;
 
 function start() {
-    // numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    numberOfFilms = +'9';
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        // numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        numberOfFilms = +'9';
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     }
 }
 
 start();
 
-let personalMovieDB = {
+const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
@@ -38,10 +36,8 @@ let personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        // const a = prompt('Один из последних просмотренных фильмов?', ''),
-            //   b = prompt('На сколько оцените его?', '');
-        const a = 'qwerty',
-              b = '8';
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+              b = prompt('На сколько оцените его?', '');
     
         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
             personalMovieDB.movies[a] = b;
@@ -68,23 +64,3 @@ function detectPersonalLevel() {
 }
 
 detectPersonalLevel();
-
-function showMyDB() {
-    if (personalMovieDB.privat == false) {
-        console.log(personalMovieDB);
-    } else {
-        console.log('Access denied!');
-    }
-}
-
-function writeYourGenres() {
-    for (let i = 0; i < 3; i++) {
-        // const answer = prompt(`Ваш любимый жанр под номером ${i+1}?`);
-        const answer = `ololo`;
-        personalMovieDB.genres[i] = answer;
-    }
-}
-
-writeYourGenres();
-showMyDB();
-
